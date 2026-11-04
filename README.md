@@ -68,26 +68,36 @@ npm run dev              # http://localhost:5173
 
 Use **http://localhost:5173** (not a different port) so it matches the Google OAuth origins.
 
-## Deployment
+## Deployment (Vercel only — no credit card required)
 
-### Backend → Render
+Both apps run on Vercel's free Hobby plan.
 
-1. Push this repository to GitHub.
-2. In Render: **New + → Blueprint**, select the repository and apply `render.yaml`.
-3. Fill in the environment variables when prompted:
+### Backend → Vercel
+
+The API is exported as a serverless Express app from `backend/api/[...path].js`, and
+`backend/db.js` reuses the MongoDB connection across warm invocations.
+
+1. Vercel → **Add New → Project** → import this repository.
+2. Set **Root Directory** to `backend` and keep the framework preset as **Other**.
+3. Add the environment variables:
    - `MONGO_URI` — your Atlas connection string
    - `JWT_SECRET` — a long random string
    - `GOOGLE_CLIENT_ID` — the OAuth Web client ID
-   - `CLIENT_URL` — your Vercel URL (add it after the frontend is deployed), e.g. `https://your-app.vercel.app`
-4. In MongoDB Atlas → **Network Access**, allow Render's connections (`0.0.0.0/0` for the free tier).
-5. Verify `https://<service>.onrender.com/health` returns `{"status":"ok","database":"connected"}`.
+   - `CLIENT_URL` — your frontend URL (comma-separated list is supported)
+4. Deploy. The API base becomes `https://<backend-project>.vercel.app/api`.
+5. In MongoDB Atlas → **Network Access**, allow `0.0.0.0/0` (Vercel functions use dynamic IPs).
+6. Verify `https://<backend-project>.vercel.app/api/health` returns
+   `{"status":"ok","database":"connected"}`.
+
+> `render.yaml` is kept as an optional Render Blueprint. Render currently asks new
+> accounts for a payment method, so Vercel is the card-free default.
 
 ### Frontend → Vercel
 
-1. In Vercel: **Add New → Project**, import this repository.
+1. Vercel → **Add New → Project** → import the same repository again.
 2. Set **Root Directory** to `frontend` (framework auto-detects as Vite).
 3. Add the environment variables:
-   - `VITE_API_URL` = your Render service URL (e.g. `https://movie-explorer-api.onrender.com`)
+   - `VITE_API_URL` = your backend base **including `/api`**, e.g. `https://movie-explorer-api.vercel.app/api`
    - `VITE_TMDB_API_KEY` = your TMDB key
    - `VITE_GOOGLE_CLIENT_ID` = the OAuth Web client ID
 4. Deploy. `frontend/vercel.json` already adds the SPA rewrite so deep links such as `/movie/550` work.
@@ -98,7 +108,8 @@ Use **http://localhost:5173** (not a different port) so it matches the Google OA
 2. Under **Authorized JavaScript origins** add:
    - `https://your-app.vercel.app`
    - `http://localhost:5173` (local development)
-3. Keep `CLIENT_URL` on Render in sync with the Vercel domain, and redeploy the backend after changing it.
+3. Keep `CLIENT_URL` on the backend project in sync with the Vercel frontend domain, and
+   redeploy the backend after changing it.
 
 ## API endpoints
 
