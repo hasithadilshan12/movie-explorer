@@ -20,6 +20,9 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Vercel CLI link metadata
+.vercel/
+
 # Editor / OS
 .vscode/*
 !.vscode/extensions.json
