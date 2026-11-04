@@ -4549,9 +4549,10 @@ a.profile-stat-card:hover {
 
   .details-poster-col {
     display: grid;
-    grid-template-columns: 140px 1fr;
+    grid-template-columns: 140px minmax(0, 1fr);
     gap: 16px;
     align-items: start;
+    min-width: 0;
   }
 
   .details-poster {
@@ -4741,7 +4742,7 @@ a.profile-stat-card:hover {
   }
 
   .details-poster-col {
-    grid-template-columns: 110px 1fr;
+    grid-template-columns: 110px minmax(0, 1fr);
   }
 
   .details-meta {
@@ -4750,10 +4751,12 @@ a.profile-stat-card:hover {
   }
 
   .details-actions {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 4px;
-    scrollbar-width: none;
+    flex-wrap: wrap;
+    padding-bottom: 0;
+  }
+
+  .details-actions .btn-lg {
+    padding: 0 18px;
   }
 
   .details-actions .btn {
