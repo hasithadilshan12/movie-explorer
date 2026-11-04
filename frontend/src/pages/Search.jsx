@@ -200,6 +200,7 @@ export default function Search() {
                 updateParam('q', '');
               }}
               aria-label="Clear search text"
+              title="Clear search text"
             >
               <X size={17} />
             </button>

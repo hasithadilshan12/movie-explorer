@@ -304,7 +304,7 @@ export default function Profile() {
                 <h2>Edit profile</h2>
                 <p>Choose the name other movie fans will see.</p>
               </div>
-              <button type="button" className="icon-btn" onClick={() => setEditing(false)} aria-label="Close">
+              <button type="button" className="icon-btn" onClick={() => setEditing(false)} aria-label="Close" title="Close">
                 <X size={19} />
               </button>
             </div>

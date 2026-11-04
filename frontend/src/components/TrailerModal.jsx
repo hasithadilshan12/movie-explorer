@@ -29,7 +29,7 @@ export default function TrailerModal({ open, onClose, videoKey, title }) {
             <Play size={16} fill="currentColor" /> Now playing
           </span>
           <strong>{title}</strong>
-          <button type="button" className="icon-btn" onClick={onClose} aria-label="Close trailer">
+          <button type="button" className="icon-btn" onClick={onClose} aria-label="Close trailer" title="Close trailer">
             <X size={20} />
           </button>
         </div>

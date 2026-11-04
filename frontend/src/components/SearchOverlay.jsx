@@ -137,7 +137,7 @@ export default function SearchOverlay({ open, onClose }) {
             aria-label="Search movies"
           />
           {loading && <Spinner size={18} />}
-          <button type="button" className="icon-btn" onClick={onClose} aria-label="Close search">
+          <button type="button" className="icon-btn" onClick={onClose} aria-label="Close search" title="Close search">
             <X size={20} />
           </button>
         </form>
@@ -210,6 +210,7 @@ export default function SearchOverlay({ open, onClose }) {
                           onClick={(event) => clearRecent(event, item)}
                           onKeyDown={(event) => event.key === 'Enter' && clearRecent(event, item)}
                           aria-label={`Remove ${item} from recent searches`}
+                          title={`Remove ${item} from recent searches`}
                         >
                           <X size={12} />
                         </span>

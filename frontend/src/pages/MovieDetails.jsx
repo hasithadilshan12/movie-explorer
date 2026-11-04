@@ -384,11 +384,19 @@ export default function MovieDetails() {
               className={`btn btn-icon btn-lg ${favorite ? 'is-saved' : ''}`}
               onClick={handleFavorite}
               aria-label={favorite ? 'Remove from favorites' : 'Add to favorites'}
+              title={favorite ? 'Remove from favorites' : 'Add to favorites'}
             >
               <Heart size={19} fill={favorite ? 'currentColor' : 'none'} />
             </button>
             {movie.homepage && (
-              <a href={movie.homepage} target="_blank" rel="noreferrer" className="btn btn-icon btn-lg" aria-label="Official website">
+              <a
+                href={movie.homepage}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-icon btn-lg"
+                aria-label="Official website"
+                title="Official website"
+              >
                 <ExternalLink size={19} />
               </a>
             )}

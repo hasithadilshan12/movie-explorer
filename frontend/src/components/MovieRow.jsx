@@ -74,6 +74,7 @@ export default function MovieRow({
               className={`row-arrow row-arrow-left ${edges.left ? 'is-visible' : ''}`}
               onClick={() => scrollBy(-1)}
               aria-label="Scroll left"
+              title="Scroll left"
               tabIndex={edges.left ? 0 : -1}
             >
               <ChevronLeft size={22} />
@@ -95,6 +96,7 @@ export default function MovieRow({
               className={`row-arrow row-arrow-right ${edges.right ? 'is-visible' : ''}`}
               onClick={() => scrollBy(1)}
               aria-label="Scroll right"
+              title="Scroll right"
               tabIndex={edges.right ? 0 : -1}
             >
               <ChevronRight size={22} />

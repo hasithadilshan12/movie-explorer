@@ -53,6 +53,7 @@ export function ToastProvider({ children }) {
                 className="toast-close"
                 onClick={() => remove(item.id)}
                 aria-label="Dismiss notification"
+                title="Dismiss notification"
               >
                 <X size={15} />
               </button>

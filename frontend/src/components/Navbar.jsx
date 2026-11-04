@@ -122,6 +122,7 @@ export default function Navbar() {
               className="search-trigger"
               onClick={() => setSearchOpen(true)}
               aria-label="Open search"
+              title="Open search"
             >
               <Search size={17} />
               <span>Search movies</span>
@@ -193,6 +194,7 @@ export default function Navbar() {
               className="hamburger"
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
+              title="Open menu"
             >
               <Menu size={22} />
             </button>
@@ -209,6 +211,7 @@ export default function Navbar() {
               className="icon-btn"
               onClick={() => setMenuOpen(false)}
               aria-label="Close menu"
+              title="Close menu"
             >
               <X size={22} />
             </button>

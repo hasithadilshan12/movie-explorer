@@ -50,19 +50,19 @@ export default function Footer() {
             community of movie lovers.
           </p>
           <div className="socials" aria-label="Social links">
-            <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">
               <GithubIcon />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" title="Instagram">
               <InstagramIcon />
             </a>
-            <a href="https://x.com" target="_blank" rel="noreferrer" aria-label="X">
+            <a href="https://x.com" target="_blank" rel="noreferrer" aria-label="X" title="X">
               <XIcon />
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube">
+            <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube" title="YouTube">
               <YoutubeIcon />
             </a>
-            <a href="mailto:hello@movieexplorer.app" aria-label="Email">
+            <a href="mailto:hello@movieexplorer.app" aria-label="Email" title="Email">
               <Mail size={17} />
             </a>
           </div>
