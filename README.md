@@ -6,6 +6,11 @@ library, and share reviews with other movie lovers.
 
 **Stack:** React 19 + Vite (frontend) · Express 5 + Mongoose (backend) · MongoDB Atlas · TMDB API · Google Identity Services
 
+## Live
+
+- **App:** https://movie-explorer-iota-five.vercel.app
+- **API health:** https://movie-explorer-api-tan.vercel.app/api/health
+
 ## Repository layout
 
 ```
